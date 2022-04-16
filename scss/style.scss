@@ -1,0 +1,257 @@
+@import "nulcss.scss";
+$maxWidth: 2000;
+@mixin adaptfz($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+/* table of contents 
+- header
+- main banner
+- categories
+- games list
+- footer
+- breakpoints
+*/
+
+
+body{
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	height: 100%;
+	background-color: #1D1F23;
+}
+.container{
+	max-width: 1170px;
+	margin: 0px auto;
+}
+	.logo {
+		display: flex;
+		align-items: center;
+		color: #fff;
+	}
+	.logo img {
+		height: 48px;
+	}
+	.nav__li {
+		display: inline-flex;
+		margin-left: 86px ;
+		padding: 35px 0px;
+		font-style: normal;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 122.19%;
+	}
+	.nav__li:not(:last-child) {
+		margin: 0px 0px auto 86px;
+	}
+	a {
+		color: #fff;
+	}
+	.navSelected {
+		color: #F8611A;
+	}
+	.linz {
+		background-color: #555A61;
+		margin: 0px 18px 0px 32px;
+	}
+	input {
+		background-color: #555A61;
+	}
+	.button {
+		display: inline-block;
+		background-color: #F8611A;
+		color: #fff;
+		border-radius: 11px;
+		font-weight: 600;
+		line-height: 129.69%;
+		padding: 13px 61px;
+	}
+	.button:hover {
+		background-color: #f8731a;
+		color: rgb(0, 0, 0);
+		border-radius: 9px;
+	}
+	/* header */
+	header {
+		background-color: #2B2E35;	
+	}
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.logoTitle {
+		font-style: normal;
+		font-weight: 600;
+	}
+	.searh__form {
+		display: flex;
+		align-items: center;
+		height: 48px;
+		width: 295px;
+		background-color: #555A61;
+		color: #6D7480;
+		align-items: center;
+		border-radius: 10px;
+		font-weight: 400;
+		line-height: 19px;
+		font-size: 16px;
+	}
+	/* main banner */
+	.mainBanner{
+		position: relative;
+		display: flex;
+		height: 357px;
+		width: 1170px;
+		border-radius: 30px;
+		margin: 119px 0px 66px 0px;
+		background: url(../img/mainBanner.png);		
+	}
+	.mainBanner__elements {
+		display: flex;
+		flex-direction: column;
+		flex: 0 0 480px;
+		justify-content: space-around;
+		color: #fff;
+		margin: 53px 20px 50px 84px;
+		overflow: hidden;
+	}
+	.mainBanner__elements h2{
+		font-weight: 900;
+		font-size: 42px;
+		line-height: 129.69%;
+	}
+	.mainBanner__elements p {
+		font-weight: 400;
+		line-height: 156.69%;
+	}
+	.bannerBtn {
+		font-weight: 800;
+		line-height: 156.69%;
+		padding: 13px 78px;
+	}
+	.mainBanner__img {
+		position: absolute;
+		top: -67px;
+		left: 520px;
+		width: 648px;
+		height: 424px;
+	}
+/* categories */
+.categories {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.categories__title {
+	font-weight: 500;
+	font-size: 35px;
+	line-height: 129.69%;
+	color: #fff;
+}
+.categories__link {
+	background-color: #2D3B52;
+	border-radius: 34px;
+}
+.allCategories {
+	display: inline-block;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 129.69%;
+	padding: 10px 32px;
+}
+.allCategories:hover {
+	color: #F8611A;
+}
+/* games list */
+.gamesList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 31px;
+	padding: 39px 0px;
+	max-width: 1170px;
+}
+.game {
+	flex: 0 0 auto;
+	width: 369px;
+	height: 445px;
+	border-radius: 30px;
+	color: #fff;
+	background: linear-gradient(to bottom, #2B2E35 0%, #40444e 100%);
+}
+.game__image img{
+	border-radius: 30px 30px 0px 0px;
+	height: 213px;
+}
+.game__title {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 129.69%;
+	margin: 29px 0px 14px 14px;
+}
+.game__description {
+	font-weight: 400;
+	line-height: 129.69%;
+	font-size: 16px;
+	margin: 0px 0px 8px 14px;
+}
+.game__description p:last-child {
+	margin: 0px 0px 24px 0px;
+}
+.game__description span {
+	color: #57677C;
+}
+.game__link {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 129.69%;
+	padding: 13px 61px;
+	margin: 0px 0px 0px 14px;
+}
+/* footer */
+footer {
+	background-color: #0D0E10;
+}
+.footer-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 50px 0px 0px 0px ;
+}
+.footer-middle {
+	display: flex;
+	justify-content: end;
+}
+.social__ul {
+	padding: 20px 145px 40px 0px;
+}
+.social__li {
+	display: inline-flex;
+	gap: 19px;
+}
+.social__li a {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	height: 37px;
+	width: 37px;
+	background-color: #555A61;
+	border-radius: 50%;
+}
+.footer-bottom {
+	display: flex;
+	justify-content: center;
+	color: #A6A4A9;
+	font-weight: 400;
+	line-height: 122.19%;
+	font-size: 16px;
+	padding-bottom: 50px;
+}
+/* breakpoints */
+@media screen and (max-width: 1000px) {
+.mainBanner {
+	display: none;
+}
+}
